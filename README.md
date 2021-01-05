@@ -1,8 +1,8 @@
-#node version
-10.17.0
+##node version
+14.15.4
 
-#build
+##build
 yarn build
 
-#webpack-dev-server
+##webpack-dev-server
 yarn start
