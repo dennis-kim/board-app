@@ -7,11 +7,12 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "../build")
+    path: path.resolve(__dirname, "../dist"),
+    publicPath: '/'
   },
   mode: "development",
   devServer: {
-    contentBase: path.resolve(__dirname, "../build"),
+    contentBase: path.resolve(__dirname, "../dist"),
     index: "index.html",
     port: 9000
   },
@@ -32,37 +33,18 @@ module.exports = {
         ]
       },
       {
-        // web font loader
         test: /\.(woff|eot)$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              publicPath: '../dist/',
-              name: '../src/assets/webfonts/[name].[ext]',
-            },
-          },
-        ],
+          'file-loader?name=font/[name].[ext]'
+        ]
       },
+
       {
-        // images loader
-        test: /\.(png|jpg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              publicPath: '../dist/',
-              name: '../src/assets/images/s_images/[name].[ext]',
-            },
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              publicPath: '../dist/',
-              name: '../src/assets/images/p_images/[name].[ext]',
-            },
-          },
-        ],
+        test: /\.(jpg|png)$/,
+        use : [
+            'file-loader?name=img/[name].[ext]',
+            'image-webpack-loader',
+        ]
       },
       {
         test: /\.css$/,
