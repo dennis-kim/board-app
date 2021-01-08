@@ -1,10 +1,10 @@
 import React from 'react';
-import './style.scss';
+import './style/style.scss';
 
-const Root = () => {
+const App = () => {
   return (
     <h3 className="title">Hello, React</h3>
   );
 };
 
-export default Root;
+export default App;
