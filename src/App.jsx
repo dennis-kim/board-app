@@ -1,9 +1,11 @@
 import React from 'react';
-import './style/style.scss';
+
+import Main from '@containers/Main';
+
 
 const App = () => {
   return (
-    <h3 className="title">Hello, React</h3>
+    <Main />
   );
 };
 
