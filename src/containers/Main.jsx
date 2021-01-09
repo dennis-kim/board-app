@@ -152,7 +152,7 @@ const Main = () => {
                     {/* 인기 검색어 영역 */}
                     <section className="rankup_section">
                         <h2 className="title">인기 검색어</h2>
-                        <ul>
+                        <ul className="rankup_list">
                             <li>
                                 <a href="">반응형 웹</a>
                             </li>
